@@ -1,0 +1,31 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "TumorPathologyEvent",
+  "url": "http://hl7.eu/fhir/oncology/StructureDefinition/TumorPathologyEvent",
+  "version": "0.1.0-ci",
+  "name": "TumorPathologyEvent",
+  "title": "Cancer  Episode",
+  "status": "active",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "name": "RIM Mapping",
+      "uri": "http://hl7.org/v3"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://hl7.eu/fhir/oncology/StructureDefinition/TumorPathologyEvent",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "TumorPathologyEvent",
+        "path": "TumorPathologyEvent",
+        "short": "Cancer  Episode"
+      }
+    ]
+  }
+}

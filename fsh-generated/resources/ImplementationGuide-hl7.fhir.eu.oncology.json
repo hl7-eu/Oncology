@@ -1,0 +1,109 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.eu.oncology",
+  "url": "http://hl7.eu/fhir/oncology/ImplementationGuide/hl7.fhir.eu.oncology",
+  "version": "0.1.0-ci",
+  "name": "HL7EUOncology",
+  "title": "HL7 Europe Oncology",
+  "status": "draft",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/eu"
+        }
+      ]
+    }
+  ],
+  "description": "This guide describes how oncology health data can be represented in the European REALM.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "packageId": "hl7.fhir.eu.oncology",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.uv.ips",
+      "version": "current",
+      "uri": "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+      "id": "hl7_fhir_uv_ips"
+    },
+    {
+      "packageId": "hl7.fhir.eu.extensions.r4",
+      "version": "dev",
+      "uri": "http://hl7.eu/fhir/r4/extensions/ImplementationGuide/hl7.fhir.eu.extensions.r4",
+      "id": "hl7_fhir_eu_extensions_r4"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/TumorPathologyEvent"
+        },
+        "name": "Cancer  Episode",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2024+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "apply-contact",
+        "value": "true"
+      },
+      {
+        "code": "apply-jurisdiction",
+        "value": "true"
+      },
+      {
+        "code": "apply-publisher",
+        "value": "true"
+      },
+      {
+        "code": "apply-version",
+        "value": "true"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "true"
+      },
+      {
+        "code": "usage-stats-opt-out",
+        "value": "true"
+      }
+    ]
+  }
+}
