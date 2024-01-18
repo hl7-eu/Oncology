@@ -1,0 +1,26 @@
+{
+  "resourceType": "Person",
+  "id": "Person31",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/oncology/StructureDefinition/OncologyPerson"
+    ]
+  },
+  "name": [
+    {
+      "given": [
+        "Elvira"
+      ],
+      "family": "Presley"
+    }
+  ],
+  "link": [
+    {
+      "target": {
+        "reference": "Patient/Patient42"
+      }
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1987-08-09"
+}

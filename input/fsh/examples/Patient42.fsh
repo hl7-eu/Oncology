@@ -14,3 +14,10 @@ Description: "patient example with personal identifyiable information for use in
 * gender = #male
 * name.family = "Enrique"
 * name.given = "Uderzo"
+* deceasedDateTime = 2022-07-17
+* managingOrganization = Reference(ExampleHospital)
+
+Instance: ExampleHospital
+InstanceOf: Organization
+* address.text = "Example Hospital, Way 5, 1345 Rome"
+

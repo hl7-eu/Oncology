@@ -15,5 +15,9 @@
     }
   ],
   "birthDate": "1967-03-12",
-  "gender": "male"
+  "gender": "male",
+  "deceasedDateTime": "2022-07-17",
+  "managingOrganization": {
+    "reference": "Organization/ExampleHospital"
+  }
 }
