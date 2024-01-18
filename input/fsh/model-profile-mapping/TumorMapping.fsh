@@ -25,23 +25,23 @@ Usage: #definition
 * group[=].element[=].target.display = "Patient"					
 * group[=].element[=].target.equivalence = #equivalent
 
-* group[=].element[+].code = #Tumor.ParentId					
+* group[=].element[+].code = #Tumor.ParentId			// We changed that here, we understand according to OSISRS A.14.2 "Identifier of the parent biological sample" that the parent of the tumor is the specimen used that was taken from the patients		
 * group[=].element[=].display = "Tumor"					
-* group[=].element[=].target.code = #Condition.subject					
-* group[=].element[=].target.display = "Tumor"	//No equivalence yet				
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.code = #Specimen.parent					
+* group[=].element[=].target.display = "Tumor"	
+* group[=].element[=].target.equivalence = #equivalent // if we understood correctly
 
 
 * group[=].element[+].code = #Tumor.Type					
 * group[=].element[=].display = "Type"					
-* group[=].element[=].target.code = #Condition.code					
+* group[=].element[=].target.code = #Condition.code			
 * group[=].element[=].target.display = "Code"					
 * group[=].element[=].target.equivalence = #equivalent
 
 
 * group[=].element[+].code = #Tumor.StartDate					
 * group[=].element[=].display = "StartDate"					
-* group[=].element[=].target.code = #Condition.recordedDate					
+* group[=].element[=].target.code = #Condition.onset					
 * group[=].element[=].target.display = "StartDate"					
 * group[=].element[=].target.equivalence = #equivalent
 
@@ -54,18 +54,19 @@ Usage: #definition
 
 * group[=].element[+].code = #Tumor.PerformanceStatus					
 * group[=].element[=].display = "PerformanceStatus"					
-* group[=].element[=].target.code = #Condition.note					
+* group[=].element[=].target.code = #ObservationKarnofsky.value[x]		 // TODO			
 * group[=].element[=].target.display = "Patient"		// No equivalence yet			
 * group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #Tumor.StadeType					
 * group[=].element[=].display = "Stade"					
-* group[=].element[=].target.code = #Condition.stage					
+* group[=].element[=].target.code = #Condition.stage.type					
 * group[=].element[=].target.display = "stage"					
 * group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #Tumor.StadeValue					
 * group[=].element[=].display = "Stade"					
-* group[=].element[=].target.code = #Condition.stage.type					
+* group[=].element[=].target.code = #Condition.stage.value					
 * group[=].element[=].target.display = "stage"					
 * group[=].element[=].target.equivalence = #equivalent
+
