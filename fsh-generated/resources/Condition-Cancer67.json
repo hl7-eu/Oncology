@@ -1,0 +1,46 @@
+{
+  "resourceType": "Condition",
+  "id": "Cancer67",
+  "meta": {
+    "id": "ashdogfweogewo",
+    "profile": [
+      "http://hl7.eu/fhir/oncology/StructureDefinition/hl7-tumor"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "254637007",
+        "system": "http://snomed.info/sct",
+        "display": "Non-small cell lung cancer",
+        "version": "International Edition, January 2024"
+      }
+    ]
+  },
+  "stage": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "399566009",
+            "system": "http://snomed.info/sct",
+            "version": "International Edition, January 2024"
+          }
+        ]
+      },
+      "summary": {
+        "coding": [
+          {
+            "code": "cT3N2M0",
+            "system": "https://cancerstaging.org",
+            "version": "8th Edition"
+          }
+        ]
+      }
+    }
+  ],
+  "subject": {
+    "reference": "Patient/Patient42"
+  },
+  "onsetDateTime": "2021-02-26"
+}

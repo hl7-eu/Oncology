@@ -1,0 +1,9 @@
+{
+  "resourceType": "Organization",
+  "id": "ExampleHospital",
+  "address": [
+    {
+      "text": "Example Hospital, Way 5, 1345 Rome"
+    }
+  ]
+}

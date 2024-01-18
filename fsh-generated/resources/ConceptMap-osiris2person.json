@@ -1,0 +1,92 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "osiris2person",
+  "url": "http://hl7.eu/fhir/oncology/ConceptMap/osiris2person",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "OncologyPerson.gender",
+              "display": "Gender",
+              "equivalence": "equivalent",
+              "comment": "For the time being assumed to be the administrative gender"
+            }
+          ],
+          "code": "PatientOsiris.Gender",
+          "display": "Gender"
+        },
+        {
+          "target": [
+            {
+              "code": "Observation",
+              "display": "Ethnicity",
+              "equivalence": "equivalent"
+            }
+          ],
+          "code": "PatientOsisris.Ethnicity",
+          "display": "Ethnicity"
+        },
+        {
+          "target": [
+            {
+              "code": "OncologyPerson.birthDate",
+              "display": "Birth date",
+              "equivalence": "equivalent",
+              "comment": "Birth Date of the person"
+            }
+          ],
+          "code": "PatientOsiris.BirthDate",
+          "display": "Birth date"
+        },
+        {
+          "target": [
+            {
+              "code": "Observation.valueCodeableConcept",
+              "display": "Cause of Death",
+              "equivalence": "equivalent",
+              "comment": "unclear what is meant by OriginCenter, whether that is the first center where the patient is registered, or another center where the patient was referred from, or event the general practicioner"
+            }
+          ],
+          "code": "PatientOsiris.CauseofDeath",
+          "display": "Cause of Death"
+        },
+        {
+          "target": [
+            {
+              "code": "Observation.value[x]",
+              "display": "Last Update",
+              "equivalence": "equivalent",
+              "comment": "follow-up might be modelled as Encounter as well"
+            }
+          ],
+          "code": "PatientOsiris.LastNewsDate",
+          "display": "Last News Date"
+        },
+        {
+          "target": [
+            {
+              "code": "OncologyPerson.deceasedDateTime",
+              "display": "Death date",
+              "equivalence": "equivalent",
+              "comment": "Death date if available, by extension"
+            }
+          ],
+          "code": "PatientOsiris.DeathDate",
+          "display": "Death date"
+        }
+      ],
+      "source": "http://hl7.eu/fhir/ig/oncology/StructureDefinition/PatientOsiris",
+      "target": "http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPerson"
+    }
+  ],
+  "name": "Osiris-Person",
+  "title": "Subject Model to this guide Map",
+  "status": "draft",
+  "experimental": true,
+  "description": "Subject Model to this guide Map",
+  "purpose": "It shows how the Subject model is mapped into this guide",
+  "sourceUri": "http://hl7.eu/fhir/ig/oncology/StructureDefinition/PatientOsiris",
+  "targetUri": "http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPerson"
+}
