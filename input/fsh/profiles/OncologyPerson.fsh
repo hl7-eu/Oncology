@@ -12,12 +12,6 @@ Description: "Person Profile that contains identifiying data"
 * link.target only Reference(OncologyPatient)
 * extension contains $person-deceased-r5 named PersonDeceasedR5 0..1
 
-* extension[PersonDeceasedR5].short = "Indicates if the individual is deceased or not"
-* extension[PersonDeceasedR5].definition = "This extension implements the R5 deceased element."
-* extension[PersonDeceasedR5].slicing.discriminator.type = #value
-* extension[PersonDeceasedR5].slicing.discriminator.path = "url"
-* extension[PersonDeceasedR5].contains
-    valueBoolean 0..1 and
-    valueDateTime 0..1
-* extension [valueBoolean].value[x] only valueBoolean
-* extension [valueDateTime].value[x] only valueDateTime
+* extension[PersonDeceasedR5] ^short = "Indicates if the individual is deceased or not"
+* extension[PersonDeceasedR5] ^definition = "This extension implements the R5 deceased element."
+* extension[PersonDeceasedR5].value[x] only boolean or dateTime
