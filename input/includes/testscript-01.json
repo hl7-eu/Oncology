@@ -1,0 +1,197 @@
+{
+  "resourceType": "TestScript",
+  "id": "TS-ONCOLOGY-01",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2024-01-18T13:05:12.234+00:00",
+    "source": "#AayzkIeQftPZIKBO"
+  },
+  "url": "http://hl7.org/fhir/TestScript/TS-ONCOLOGY-01",
+  "version": "0.1.0",
+  "name": "Create and validate a patient Resource in an oncological context",
+  "status": "draft",
+  "experimental": true,
+  "date": "2023-12-01",
+  "publisher": "Fyrstain",
+  "contact": [
+    {
+      "name": "Fyrstain",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://fyrstain.com"
+        }
+      ]
+    }
+  ],
+  "description": "Create and validate a patient Resource.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "FRA",
+          "display": "France"
+        }
+      ]
+    }
+  ],
+  "purpose": "Create and validate a patient Resource.",
+  "fixture": [
+    {
+      "id": "fixture-organization-create",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "DocumentReference/ExampleHospital-1"
+      }
+    },
+    {
+      "id": "fixture-patient-create",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "DocumentReference/OncologyPatient-1"
+      }
+    }
+  ],
+  "profile": [
+    "http://hl7.eu/fhir/oncology/StructureDefinition/OncologyPatient"
+  ],
+  "variable": [
+    {
+      "id": "organizationId",
+      "name": "organizationId",
+      "path": "id",
+      "sourceId": "fixture-organization-response"
+    },
+    {
+      "id": "patientId",
+      "name": "patientId",
+      "path": "id",
+      "sourceId": "fixture-patient-response"
+    }
+  ],
+  "setup": {
+    "action": [
+      {
+        "operation": {
+          "id": "SET-01",
+          "type": {
+            "system": "http://hl7.org/fhir/restful-interaction",
+            "code": "create"
+          },
+          "resource": "Organization",
+          "description": "Create the organization resource on the test server using the id from fixture-organization-create.",
+          "accept": "application/fhir+json",
+          "contentType": "application/fhir+json",
+          "encodeRequestUrl": false,
+          "method": "post",
+          "responseId": "fixture-organization-response",
+          "sourceId": "fixture-organization-create"
+        }
+      },
+      {
+        "assert": {
+          "id": "SET-01-ASS-01",
+          "label": "HTTPStatus",
+          "description": "Confirm that the returned HTTP status is 201.",
+          "direction": "response",
+          "responseCode": "201",
+          "stopTestOnFail": false,
+          "warningOnly": false
+        }
+      }
+    ]
+  },
+  "test": [
+    {
+      "id": "1-CreatePatient",
+      "name": "1-CreatePatient",
+      "description": "Create a Patient resource",
+      "action": [
+        {
+          "operation": {
+            "id": "TES-01",
+            "type": {
+              "system": "http://hl7.org/fhir/restful-interaction",
+              "code": "create"
+            },
+            "resource": "Patient",
+            "description": "Create the Patient resource on the test server using the id from fixture-patient-create.",
+            "contentType": "application/fhir+json",
+            "encodeRequestUrl": false,
+            "method": "post",
+            "responseId": "fixture-patient-response",
+            "sourceId": "fixture-patient-create"
+          }
+        },
+        {
+          "assert": {
+            "id": "TES-01-ASS-01",
+            "label": "HTTPStatus",
+            "description": "Confirm that the returned HTTP status is 201.",
+            "direction": "response",
+            "responseCode": "201",
+            "stopTestOnFail": true,
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "id": "TES-01-ASS-02",
+            "label": "ValidateProfileId",
+            "description": "Confirm that the returned Patient conforms to the specification.",
+            "direction": "request",
+            "stopTestOnFail": false,
+            "validateProfileId": "0",
+            "warningOnly": true
+          }
+        },
+        {
+          "assert": {
+            "id": "TES-01-ASS-03",
+            "label": "FHIRPath",
+            "description": "Confirm that the given name is 'Luc'.",
+            "direction": "response",
+            "expression": "Patient.name.where(given = 'Luc').exists()",
+            "stopTestOnFail": false,
+            "warningOnly": false
+          }
+        }
+      ]
+    }
+  ],
+  "teardown": {
+    "action": [
+      {
+        "operation": {
+          "id": "TED-01",
+          "type": {
+            "system": "http://hl7.org/fhir/restful-interaction",
+            "code": "delete"
+          },
+          "resource": "Patient",
+          "description": "Delete the Patient resource on the test server using the id from fixture-patinet-response.",
+          "encodeRequestUrl": true,
+          "method": "delete",
+          "targetId": "patientId"
+        }
+      },
+      {
+        "operation": {
+          "id": "TED-02",
+          "type": {
+            "system": "http://hl7.org/fhir/restful-interaction",
+            "code": "delete"
+          },
+          "resource": "Organization",
+          "description": "Delete the Organization resource on the test server using the id from fixture-organization-response.",
+          "encodeRequestUrl": true,
+          "method": "delete",
+          "targetId": "organizationId"
+        }
+      }
+    ]
+  }
+}
