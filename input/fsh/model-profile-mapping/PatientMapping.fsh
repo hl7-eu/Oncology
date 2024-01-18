@@ -9,18 +9,9 @@ Usage: #definition
 * description = "Subject Model to this guide Map"					
 * purpose = "It shows how the Subject model is mapped into this guide"					
 * sourceUri = "http://hl7.eu/fhir/ig/oncology/StructureDefinition/PatientOsiris"					
-* targetUri = "http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPatient"					
-* targetUri[+] ="http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPerson"
+* targetUri[+] = "http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPatient"					
 * group[+].source = "http://hl7.eu/fhir/ig/oncology/StructureDefinition/PatientOsiris"					
 * group[=].target = "http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPatient"					
-* group[=].target = "http://hl7.eu/fhir/ig/oncology/StructureDefinition/OncologyPerson"
-
-* group[=].element[+].code = #PatientOsiris.Gender					
-* group[=].element[=].display = "Gender"					
-* group[=].element[=].target.code = #OncologyPerson.gender					
-* group[=].element[=].target.display = "Gender"					
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "For the time being assumed to be the administrative gender"					
 
 * group[=].element[+].code = #PatientOsiris.Gender					
 * group[=].element[=].display = "Gender"					
@@ -34,13 +25,6 @@ Usage: #definition
 * group[=].element[=].target.code = #Observation		// another option would be an extension of the Patient ressource			
 * group[=].element[=].target.display = "Ethnicity"					
 * group[=].element[=].target.equivalence = #equivalent			
-
-* group[=].element[+].code = #PatientOsiris.BirthDate					
-* group[=].element[=].display = "Birth date"					
-* group[=].element[=].target.code = #OncologyPerson.birthDate					
-* group[=].element[=].target.display = "Birth date"					
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "Birth Date of the person"
 
 * group[=].element[+].code = #PatientOsiris.BirthDate					
 * group[=].element[=].display = "Birth date"					
