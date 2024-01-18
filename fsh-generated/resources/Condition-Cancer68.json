@@ -1,0 +1,46 @@
+{
+  "resourceType": "Condition",
+  "id": "Cancer68",
+  "meta": {
+    "id": "sldjgdsgdlsghjsl",
+    "profile": [
+      "http://hl7.eu/fhir/oncology/StructureDefinition/hl7-tumor"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "C62.02",
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "display": "Malignant Neoplasm of undescended left testis",
+        "version": "Version 10"
+      }
+    ]
+  },
+  "stage": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "399566009",
+            "system": "http://snomed.info/sct",
+            "version": "International Edition, January 2024"
+          }
+        ]
+      },
+      "summary": {
+        "coding": [
+          {
+            "code": "pT3N2M1",
+            "system": "https://cancerstaging.org",
+            "version": "8th Edition"
+          }
+        ]
+      }
+    }
+  ],
+  "subject": {
+    "reference": "Patient/Patient43"
+  },
+  "onsetDateTime": "2022-03-26"
+}
