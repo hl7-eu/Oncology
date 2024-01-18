@@ -27,7 +27,7 @@ Usage: #definition
 
 * group[=].element[+].code = #Tumor.ParentId			// We changed that here, we understand according to OSISRS A.14.2 "Identifier of the parent biological sample" that the parent of the tumor is the specimen used that was taken from the patients		
 * group[=].element[=].display = "Tumor"					
-* group[=].element[=].target.code = #Specimen.parent					
+* group[=].element[=].target.code = #Specimen.parent	// TODO				
 * group[=].element[=].target.display = "Tumor"	
 * group[=].element[=].target.equivalence = #equivalent // if we understood correctly
 
@@ -58,6 +58,8 @@ Usage: #definition
 * group[=].element[=].target.display = "Patient"		// No equivalence yet			
 * group[=].element[=].target.equivalence = #equivalent
 
+// Within tThe R4 Condition Ressource, ypu can use the stage.type + stage.value. mCODE uses the stage.assessment instead and references a more complex Cancer Stage Profile (which is a observation)
+// for now, we can go the easy way
 * group[=].element[+].code = #Tumor.StadeType					
 * group[=].element[=].display = "Stade"					
 * group[=].element[=].target.code = #Condition.stage.type					
