@@ -5,7 +5,8 @@ Title: "Tumor profile"
 Description: "Profile defining the primary cancer"
 * meta.id 1..1 MS 
 
-* subject 1..1 MS
+* subject 1..1 MS 
+* subject only Reference(OncologyPatient)
 * code 1..1 MS
 * code.coding.system 1..1 MS
 * code.coding.version 1..1 MS

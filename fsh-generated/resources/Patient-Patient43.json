@@ -1,0 +1,19 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient43",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/oncology/StructureDefinition/OncologyPatient"
+    ]
+  },
+  "name": [
+    {
+      "given": [
+        "Uderzo"
+      ],
+      "family": "Enrique"
+    }
+  ],
+  "birthDate": "1967-03-12",
+  "gender": "male"
+}

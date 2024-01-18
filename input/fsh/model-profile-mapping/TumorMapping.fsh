@@ -58,7 +58,7 @@ Usage: #definition
 * group[=].element[=].target.display = "Patient"		// No equivalence yet			
 * group[=].element[=].target.equivalence = #equivalent
 
-// Within tThe R4 Condition Ressource, ypu can use the stage.type + stage.value. mCODE uses the stage.assessment instead and references a more complex Cancer Stage Profile (which is a observation)
+// Within the R4 Condition Ressource, you can use the stage.type + stage.value. mCODE uses the stage.assessment instead and references a more complex Cancer Stage Profile (which is a observation)
 // for now, we can go the easy way
 * group[=].element[+].code = #Tumor.StadeType					
 * group[=].element[=].display = "Stade"					
